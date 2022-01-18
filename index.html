@@ -9,13 +9,14 @@
 <body>
 
  
-  <div style="right: 100px; border: 10px ; height: 500px; position: fixed; width: 270px; overflow: hidden; top: 10px;"id="theDivDescription">
+  <div style="right: 100px; border: 1px ; height: 300px; position: fixed; width: 164px; overflow: hidden; top: 10px; display: none" id="theDivDescription">
+
     <div style="overflow: hidden;">
     </div>
     <iframe 
 	id="theDescription" 
 	scrolling="yes" 
-	style="height: 300px; border: 10px; width: 165px; margin-top: 10px; margin-right: 24px;" 
+	style="height: 300px; border: 1px; width: 165px; margin-top: 1px; margin-right: 1px; background-color : white;" 
 	>
     </iframe>
     </div>
@@ -35,31 +36,6 @@ PE --> TW
 PE --> Melmak
 end
 
-click B+ callback "<p>
-This is a tooltip for a link
-This is a tooltip for a link
-
-This is a tooltip for a link
-
-This is a tooltip for a link
-</p>
-<p>
-</p>
-<p>
-</p>
-<p>
-</p>
-<p>This is a tooltip for a link
-
-This is a tooltip for a link
-
-This is a tooltip for a link
-
-This is a tooltip for a link
-
-This is a tooltip for a link
-</p>
-"
 
 </div>
 <div class="mermaid">
@@ -86,7 +62,6 @@ graph TD
 
 subgraph OG-TAT-family
 *GT --> OG_TAT
-OG_TAT --> Toad
 OG_TAT --> RR
 OG_TAT --> Yeti
 OG_TAT --> Clockwerk_TAT
@@ -100,7 +75,10 @@ Clockwerk_TAT --> Colckwerk_Orange
 Ghost --> TAT_Black_Cap
 Riptide --> A_Riptide
 Yeti2 --> Deep_End
-TAT_Black_Cap --> Harlquin
+TAT_Black_Cap --> Harlequin
+TAT_Black_Cap --> Toad_Black_Cap
+OG_TAT --> Toad
+Toad --> Toad_Black_Cap
 end	
 
 </div>
@@ -120,42 +98,7 @@ TAM --> MVP
 MVP --> AMVP
 end
 
-click MVP callback "<p>This is a tooltip for a link  
-  
-  
-  that goes over many lines
-  ## This is a tooltip for a link  
-  
-  
-  that goes over many linesThis is a tooltip for a link  
-  
-  
-  that goes over many linesThis is a tooltip for a link  
-  
-  
-  that goes over many linesThis is a tooltip for a link  
-  
-  
-  that goes over many linesThis is a tooltip for a link  
-  
-  
-  that goes over many lines</p>  that goes over many linesThis is a tooltip for a link  
-  
-  
-  that goes over many linesThis is a tooltip for a link  
-  
-  
-  that goes over many lines"
 
-
-
-A-->B;
-B-->C;
-C-->D;
-click A callback "Tooltip"
-click B "http://www.github.com" "This is a link"
-click C callback "Tooltip"
-click D href "This is a link"
 
 </div>
 
@@ -169,17 +112,19 @@ click D href "This is a link"
   -->     
    
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.js"></script>
-
+<script src="strainDB.js"></script>
    
    <script>
    
    
 	var descVisible = false;
+	var theDivDescription = document.getElementById('theDivDescription');
     var callback = function(nodename){
 		var clickableclasses = document.getElementsByClassName('clickable');
 		//var nodeFound;
 		var iframe = document.getElementById("theDescription");
 		var html = "";
+		if (!descVisible){
 		for (let item of clickableclasses) {
 
 			//console.log(item.lastChild.textContent);
@@ -192,7 +137,6 @@ click D href "This is a link"
 			//theSpan.innerHTML="This is my span";
 			//theDiv.append(theSpan);
 			//item.append(theDiv);
-			if (!descVisible){
 				if (item.id.includes(nodename)) {
 					//nodeFound = item;
 					//console.log(nodeFound.getAttribute('title'));
@@ -203,15 +147,20 @@ click D href "This is a link"
 					descVisible = true;
 					//document.body.appendChild(iframe);
 					//console.log('iframe.contentWindow =', iframe.contentWindow);
+					document.getElementById('theDivDescription').style.display = "block";
 					break;
 				}
-			}
-			else {
-				html = "";
-				iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
-				descVisible = false;
-			}
 		}
+		}
+		else {
+			html = "";
+			iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+			descVisible = false;
+			theDivDescription.style.display = "none";
+		}
+		
+		
+		
 		//filledOutNodes = true;
 
 		//var popup = document.getElementById("descof"+nodename);
@@ -222,6 +171,7 @@ click D href "This is a link"
         //alert(nodeclasses);
 		//showTootltip();
     }
+
     var config = {
         startOnLoad:true,
         flowchart:{
@@ -234,9 +184,33 @@ click D href "This is a link"
     };
 
     mermaid.initialize(config);
-	//function DoViewIFRAME(){
-	//	document.getElementById('theDivDescription').style.display = "none";
-	//}
+	window.onload = function (){
+
+		var allNodes = document.getElementsByClassName('node');
+	//console.log(allNodes[0].click);
+	//var elem = allNodes.item(1);
+		for (let elem of allNodes) {
+			let sname = elem.textContent.replace('\*','');
+			console.log(sname);
+		  if (elem !== null) {
+			elem.classList.remove("default");
+			elem.classList.add("clickable");
+			elem.setAttribute('title', strainDB[sname]);
+			elem.addEventListener(
+			  'click',
+			  function (){
+				callback(elem.textContent);
+			  },
+			  false
+			);
+			//console.log(strainDB["GT"]);
+			//for (const key of Object.keys(strainDB)) {
+		//console.log(key + ":" + strainDB[key]);
+		//;
+			//}
+		  }
+		}
+	}
 //--></script>
 
 
