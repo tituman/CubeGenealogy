@@ -1,7 +1,7 @@
 const strainDB = {
 'OG' : 'OG Ps cubexsis',
 'B+' : '(original genetics)',
-'PE' : '(original genetics), <p>probably by Pollock + McKenna from amazonian/colombian stock</p>',
+'PE' : '<p>(original genetics),</p><p>probably by Pollock + McKenna from amazonian/colombian stock</p>',
 'Melmak' : 'iso of PE',
 'TW' : 'Tidal Wave: B+ x PE',
 'KSSS' : 'Koh Samui Super Strain, original genetics',
