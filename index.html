@@ -1,0 +1,251 @@
+<!doctype html>
+
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+ 
+  <div style="right: 100px; border: 10px ; height: 500px; position: fixed; width: 270px; overflow: hidden; top: 10px;"id="theDivDescription">
+    <div style="overflow: hidden;">
+    </div>
+    <iframe 
+	id="theDescription" 
+	scrolling="yes" 
+	style="height: 300px; border: 10px; width: 165px; margin-top: 10px; margin-right: 24px;" 
+	>
+    </iframe>
+    </div>
+    </div>
+
+
+<div class="mermaid">
+graph TD
+subgraph OG-Cube
+OG --> B+
+OG --> PE
+OG --> KSSS
+OG --> GT
+GT --> GT_subgroup
+B+ --> TW
+PE --> TW
+PE --> Melmak
+end
+
+click B+ callback "<p>
+This is a tooltip for a link
+This is a tooltip for a link
+
+This is a tooltip for a link
+
+This is a tooltip for a link
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>This is a tooltip for a link
+
+This is a tooltip for a link
+
+This is a tooltip for a link
+
+This is a tooltip for a link
+
+This is a tooltip for a link
+</p>
+"
+
+</div>
+<div class="mermaid">
+graph TD
+
+subgraph GT-family
+*KSSS --> Albino_KSAT
+*GT --> Wombat_TAT
+*GT --> Mr_Krinkle
+*GT --> Yimir
+*GT --> OG_TAT_subgroup
+*GT --> Leng
+Wombat_TAT --> Albino_KSAT
+Albino_KSAT --> Golden_KSAT
+Mr_Krinkle --> Choco_Krinkle
+Mr_Krinkle --> CK_Brains
+Wombat_TAT --> Jack_Frost
+Leng --> Ground_Zero
+end
+
+</div>
+<div class="mermaid">
+graph TD
+
+subgraph OG-TAT-family
+*GT --> OG_TAT
+OG_TAT --> Toad
+OG_TAT --> RR
+OG_TAT --> Yeti
+OG_TAT --> Clockwerk_TAT
+OG_TAT --> NST
+OG_TAT --> Ghost
+OG_TAT --> Riptide
+*TW --> Riptide
+Yeti --> Yeti2
+Yeti --> Nutcracker
+Clockwerk_TAT --> Colckwerk_Orange
+Ghost --> TAT_Black_Cap
+Riptide --> A_Riptide
+Yeti2 --> Deep_End
+TAT_Black_Cap --> Harlquin
+end	
+
+</div>
+<div class="mermaid">
+graph TD
+
+subgraph TAM-family
+*OG_TAT-->TAM
+*Melmak-->TAM
+TAM --> XXX
+TAM --> Pearly_Gates
+TAM --> Gandalf
+TAM --> Eye_Like
+TAM --> End_Game
+TAM --> Blue_Moon
+TAM --> MVP
+MVP --> AMVP
+end
+
+click MVP callback "<p>This is a tooltip for a link  
+  
+  
+  that goes over many lines
+  ## This is a tooltip for a link  
+  
+  
+  that goes over many linesThis is a tooltip for a link  
+  
+  
+  that goes over many linesThis is a tooltip for a link  
+  
+  
+  that goes over many linesThis is a tooltip for a link  
+  
+  
+  that goes over many linesThis is a tooltip for a link  
+  
+  
+  that goes over many lines</p>  that goes over many linesThis is a tooltip for a link  
+  
+  
+  that goes over many linesThis is a tooltip for a link  
+  
+  
+  that goes over many lines"
+
+
+
+A-->B;
+B-->C;
+C-->D;
+click A callback "Tooltip"
+click B "http://www.github.com" "This is a link"
+click C callback "Tooltip"
+click D href "This is a link"
+
+</div>
+
+  
+  <!--
+
+
+    <script src="index.bundle.js" charset="utf-8"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.2.4/mermaid.js" integrity="sha512-y0QwbvLV+Z/W7SireHwX4fBY1F8N2gNn5MoIXcK94RmGGh3QJEgflg5xKIzOaIiHWs7rjCk9V4+S9lkWIjizdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  -->     
+   
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.js"></script>
+
+   
+   <script>
+   
+   
+	var descVisible = false;
+    var callback = function(nodename){
+		var clickableclasses = document.getElementsByClassName('clickable');
+		//var nodeFound;
+		var iframe = document.getElementById("theDescription");
+		var html = "";
+		for (let item of clickableclasses) {
+
+			//console.log(item.lastChild.textContent);
+			//let theDiv = document.createElement("div");
+			//theDiv.append("Some text");
+			//theDiv.classList.add("popup");	
+			//let theSpan = document.createElement("span");
+			//theSpan.classList.add("popuptext");
+			//theSpan.id = ("descof"+item.lastChild.textContent);
+			//theSpan.innerHTML="This is my span";
+			//theDiv.append(theSpan);
+			//item.append(theDiv);
+			if (!descVisible){
+				if (item.id.includes(nodename)) {
+					//nodeFound = item;
+					//console.log(nodeFound.getAttribute('title'));
+					//console.log(item.id);
+					//alternative
+					html = '<body>'+item.getAttribute('title')+'</body>';
+					iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+					descVisible = true;
+					//document.body.appendChild(iframe);
+					//console.log('iframe.contentWindow =', iframe.contentWindow);
+					break;
+				}
+			}
+			else {
+				html = "";
+				iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
+				descVisible = false;
+			}
+		}
+		//filledOutNodes = true;
+
+		//var popup = document.getElementById("descof"+nodename);
+		//console.log(popup);
+		//popup.classList.toggle("show");		
+
+		
+        //alert(nodeclasses);
+		//showTootltip();
+    }
+    var config = {
+        startOnLoad:true,
+        flowchart:{
+            useMaxWidth:true,
+            htmlLabels:true,
+            //curve:'cardinal',
+        },
+        securityLevel:'loose',
+		'theme' : 'dark'
+    };
+
+    mermaid.initialize(config);
+	//function DoViewIFRAME(){
+	//	document.getElementById('theDivDescription').style.display = "none";
+	//}
+//--></script>
+
+
+	
+
+
+
+
+
+</body>
+
+</html>
