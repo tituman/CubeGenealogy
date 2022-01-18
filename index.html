@@ -101,56 +101,30 @@ end
 
 
 </div>
-
-  
-  <!--
-
-
-    <script src="index.bundle.js" charset="utf-8"></script>
-
- <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.2.4/mermaid.js" integrity="sha512-y0QwbvLV+Z/W7SireHwX4fBY1F8N2gNn5MoIXcK94RmGGh3QJEgflg5xKIzOaIiHWs7rjCk9V4+S9lkWIjizdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  -->     
+   
    
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.js"></script>
 <script src="strainDB.js"></script>
    
-   <script>
+<script>
    
    
 	var descVisible = false;
 	var theDivDescription = document.getElementById('theDivDescription');
     var callback = function(nodename){
 		var clickableclasses = document.getElementsByClassName('clickable');
-		//var nodeFound;
 		var iframe = document.getElementById("theDescription");
 		var html = "";
 		if (!descVisible){
-		for (let item of clickableclasses) {
-
-			//console.log(item.lastChild.textContent);
-			//let theDiv = document.createElement("div");
-			//theDiv.append("Some text");
-			//theDiv.classList.add("popup");	
-			//let theSpan = document.createElement("span");
-			//theSpan.classList.add("popuptext");
-			//theSpan.id = ("descof"+item.lastChild.textContent);
-			//theSpan.innerHTML="This is my span";
-			//theDiv.append(theSpan);
-			//item.append(theDiv);
+			for (let item of clickableclasses) {
 				if (item.id.includes(nodename)) {
-					//nodeFound = item;
-					//console.log(nodeFound.getAttribute('title'));
-					//console.log(item.id);
-					//alternative
 					html = '<body>'+item.getAttribute('title')+'</body>';
 					iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
 					descVisible = true;
-					//document.body.appendChild(iframe);
-					//console.log('iframe.contentWindow =', iframe.contentWindow);
 					document.getElementById('theDivDescription').style.display = "block";
 					break;
 				}
-		}
+			}
 		}
 		else {
 			html = "";
@@ -158,18 +132,6 @@ end
 			descVisible = false;
 			theDivDescription.style.display = "none";
 		}
-		
-		
-		
-		//filledOutNodes = true;
-
-		//var popup = document.getElementById("descof"+nodename);
-		//console.log(popup);
-		//popup.classList.toggle("show");		
-
-		
-        //alert(nodeclasses);
-		//showTootltip();
     }
 
     var config = {
@@ -185,40 +147,20 @@ end
 
     mermaid.initialize(config);
 	window.onload = function (){
-
 		var allNodes = document.getElementsByClassName('node');
-	//console.log(allNodes[0].click);
-	//var elem = allNodes.item(1);
 		for (let elem of allNodes) {
+			//remove * stars from names (ref to other subgroup)
 			let sname = elem.textContent.replace('\*','');
 			console.log(sname);
 		  if (elem !== null) {
 			elem.classList.remove("default");
 			elem.classList.add("clickable");
 			elem.setAttribute('title', strainDB[sname]);
-			elem.addEventListener(
-			  'click',
-			  function (){
-				callback(elem.textContent);
-			  },
-			  false
-			);
-			//console.log(strainDB["GT"]);
-			//for (const key of Object.keys(strainDB)) {
-		//console.log(key + ":" + strainDB[key]);
-		//;
-			//}
+			elem.addEventListener('click',function (){callback(elem.textContent);},false);
 		  }
 		}
 	}
-//--></script>
-
-
-	
-
-
-
-
+</script>
 
 </body>
 
