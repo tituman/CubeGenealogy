@@ -7,7 +7,7 @@ visit https://tituman.github.io/TATGenealogy/
 clicking or tapping on a strain will show a popup with details.  
 clicking or tapping on any strain will make the popup disappear.
 
-## how to use
+## how to use / contribute
 
 using the [mermaid.js](https://mermaid-js.github.io/) framework.
 
