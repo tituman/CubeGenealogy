@@ -4,11 +4,14 @@
 ## how to view
 visit https://tituman.github.io/TATGenealogy/
 
+clicking or tapping on a strain will show a popup with details.  
+clicking or tapping on any strain will make the popup disappear.
+
 ## how to use
 
 using the [mermaid.js](https://mermaid-js.github.io/) framework.
 
-the following code in [index.hmtl](index.hmtl)
+the following code in [index.html](index.hmtl)
 
 ```HTML
 <div class="mermaid">
