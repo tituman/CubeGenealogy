@@ -1,46 +1,50 @@
 <!doctype html>
-
-
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.js"></script>
+	<script src="strainDB.js"></script>
+	<script src="files/configMermaid.js"></script>
+	<script src="files/makeClickable.js"></script>
+	<script>var callback = remCallback;</script>
 </head>
+
 <body>
+	<!-- description popup -->
+	<div style="right: 100px; border: 1px ; height: 300px; position: fixed; width: 164px; overflow: hidden; top: 10px; display: none" id="theDivDescription">
+		<div style="overflow: hidden;"></div><iframe id="theDescription" scrolling="yes" style="height: 300px; border: 1px; width: 165px; margin-top: 1px; margin-right: 1px; background-color : white;"></iframe>
+	</div>
+	
+<!-- add groups or subgroups as per this template (remove the backslash '\'):
 
- 
-  <div style="right: 100px; border: 1px ; height: 300px; position: fixed; width: 164px; overflow: hidden; top: 10px; display: none" id="theDivDescription">
+<div class="mermaid">
+graph TD
+subgraph OG-Cube
+A --\> B
+B --\> C
+A --\> C --\> D
+end
+</div>
 
-    <div style="overflow: hidden;">
-    </div>
-    <iframe 
-	id="theDescription" 
-	scrolling="yes" 
-	style="height: 300px; border: 1px; width: 165px; margin-top: 1px; margin-right: 1px; background-color : white;" 
-	>
-    </iframe>
-    </div>
-    </div>
+-->
 
 
 <div class="mermaid">
 graph TD
 subgraph OG-Cube
-OG --> B+
-OG --> PE
+OG --> B+ --> TW
+OG --> PE --> TW --> TePe
 OG --> KSSS
-OG --> GT
-GT --> GT_subgroup
-B+ --> TW
-PE --> TW
+OG --> GT --> GT_subgroup
 PE --> Melmak
+PE --> TePe
 end
 
-
 </div>
+
 <div class="mermaid">
 graph TD
-
 subgraph GT-family
 *KSSS --> Albino_KSAT
 *GT --> Wombat_TAT
@@ -59,23 +63,18 @@ end
 </div>
 <div class="mermaid">
 graph TD
-
 subgraph OG-TAT-family
 *GT --> OG_TAT
 OG_TAT --> RR
 OG_TAT --> Yeti
-OG_TAT --> Clockwerk_TAT
+OG_TAT --> Clockwerk_TAT --> Colckwerk_Orange
 OG_TAT --> NST
 OG_TAT --> Ghost
 OG_TAT --> Riptide
-*TW --> Riptide
-Yeti --> Yeti2
+*TW --> Riptide --> A_Riptide
+Yeti --> Yeti2 --> Deep_End
 Yeti --> Nutcracker
-Clockwerk_TAT --> Colckwerk_Orange
-Ghost --> TAT_Black_Cap
-Riptide --> A_Riptide
-Yeti2 --> Deep_End
-TAT_Black_Cap --> Harlequin
+Ghost --> TAT_Black_Cap --> Harlequin
 TAT_Black_Cap --> Toad_Black_Cap
 OG_TAT --> Toad
 Toad --> Toad_Black_Cap
@@ -84,7 +83,6 @@ end
 </div>
 <div class="mermaid">
 graph TD
-
 subgraph TAM-family
 *OG_TAT-->TAM
 *Melmak-->TAM
@@ -94,74 +92,11 @@ TAM --> Gandalf
 TAM --> Eye_Like
 TAM --> End_Game
 TAM --> Blue_Moon
-TAM --> MVP
-MVP --> AMVP
+TAM --> MVP --> AMVP
 end
 
+</div>   
 
-
-</div>
-   
-   
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.js"></script>
-<script src="strainDB.js"></script>
-   
-<script>
-   
-   
-	var descVisible = false;
-	var theDivDescription = document.getElementById('theDivDescription');
-    var callback = function(nodename){
-		var clickableclasses = document.getElementsByClassName('clickable');
-		var iframe = document.getElementById("theDescription");
-		var html = "";
-		if (!descVisible){
-			for (let item of clickableclasses) {
-				if (item.id.includes(nodename)) {
-					html = '<body>'+item.getAttribute('title')+'</body>';
-					iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
-					descVisible = true;
-					document.getElementById('theDivDescription').style.display = "block";
-					break;
-				}
-			}
-		}
-		else {
-			html = "";
-			iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
-			descVisible = false;
-			theDivDescription.style.display = "none";
-		}
-    }
-
-    var config = {
-        startOnLoad:true,
-        flowchart:{
-            useMaxWidth:true,
-            htmlLabels:true,
-            //curve:'cardinal',
-        },
-        securityLevel:'loose',
-		'theme' : 'dark'
-    };
-
-    mermaid.initialize(config);
-	window.onload = function (){
-		var allNodes = document.getElementsByClassName('node');
-		for (let elem of allNodes) {
-			//remove * stars from names (ref to other subgroup)
-			let sname = elem.textContent.replace('\*','');
-			console.log(sname);
-		  if (elem !== null) {
-			elem.classList.remove("default");
-			elem.classList.add("clickable");
-			elem.setAttribute('title', strainDB[sname]);
-			elem.addEventListener('click',function (){callback(elem.textContent);},false);
-		  }
-		}
-	}
-</script>
 
 </body>
-
 </html>
