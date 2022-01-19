@@ -37,6 +37,9 @@ end
 -->
 
 
+<!--
+***  OG-Cube
+-->
 <div class="mermaid">
 graph TD
 subgraph OG-Cube
@@ -49,6 +52,9 @@ PE --> TePe
 end
 </div>
 
+<!--
+***  GT-family
+-->
 <div class="mermaid">
 graph TD
 subgraph GT-family
@@ -56,7 +62,7 @@ subgraph GT-family
 *GT --> Wombat_TAT
 *GT --> Mr_Krinkle
 *GT --> Yimir
-*GT --> OG_TAT_subgroup
+*GT --> TAT_subgroup
 *GT --> Leng
 Wombat_TAT --> Albino_KSAT
 Albino_KSAT --> Golden_KSAT
@@ -67,33 +73,39 @@ Leng --> Ground_Zero
 end
 </div>
 
+<!--
+***  TAT-family
+-->
 <div class="mermaid">
 graph TD
-subgraph OG-TAT-family
-*GT --> OG_TAT
-OG_TAT --> RR
-OG_TAT --> Yeti
-OG_TAT --> Clockwerk_TAT --> Colckwerk_Orange
-OG_TAT --> NST
-OG_TAT --> Ghost
-OG_TAT --> Riptide
+subgraph TAT-family
+*GT --> TAT
+TAT --> RR
+TAT --> Yeti
+TAT --> Clockwerk_TAT --> Colckwerk_Orange
+TAT --> NST
+TAT --> Ghost
+TAT --> Riptide
 *TW --> Riptide --> A_Riptide
 Yeti --> Yeti2 --> Deep_End
 Yeti --> Nutcracker
 Ghost --> TAT_Black_Cap --> Harlequin
 TAT_Black_Cap --> Toad_Black_Cap
-OG_TAT --> Toad
+TAT --> Toad
 Toad --> Toad_Black_Cap
-OG_TAT --> TAM
+TAT --> TAM
 *Melmak --> TAM
 TAM --> TAM_subgroup
 end	
 </div>
 
+<!--
+***  TAM-family
+-->
 <div class="mermaid">
 graph TD
 subgraph TAM-family
-*OG_TAT-->TAM
+*TAT-->TAM
 *Melmak-->TAM
 TAM --> XXX
 TAM --> Pearly_Gates
