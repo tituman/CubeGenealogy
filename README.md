@@ -11,7 +11,7 @@ clicking or tapping on any strain will make the popup disappear.
 
 using the [mermaid.js](https://mermaid-js.github.io/) framework.
 
-the following code in [index.html](index.hmtl)
+the following code in [index.html](index.html)
 
 ```HTML
 <div class="mermaid">
