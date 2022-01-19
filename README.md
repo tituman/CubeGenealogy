@@ -1,8 +1,8 @@
-# TATGenealogy
- genealogy of TAT
+# Cube Genealogy
+ genealogy of some famous cubes
 
 ## how to view
-visit https://tituman.github.io/TATGenealogy/
+visit https://tituman.github.io/CubeGenealogy/
 
 clicking or tapping on a strain will show a popup with details.  
 clicking or tapping on any strain will make the popup disappear.
