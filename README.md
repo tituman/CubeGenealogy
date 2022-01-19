@@ -31,7 +31,7 @@ will generate the following tree
 
 ### strain details
 to add information for a specific strain, file [strainDB.js](strainDB.js) can be edited by adding a new line at the end from the template.
-```
+```javascript
 ...
 ,'NewStrain' : 'NewStrain: <p>found by __, strainA x strainB</p>'
 ...
