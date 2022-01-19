@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.js"></script>
@@ -9,16 +8,22 @@
 	<script src="files/makeClickable.js"></script>
 	<script>var callback = remCallback;</script>
 </head>
-
 <body>
 <a href="https://github.com/tituman/TATGenealogy">github repository</a>
-
 	<!-- description popup -->
 	<div style="right: 100px; border: 1px ; height: 300px; position: fixed; width: 164px; overflow: hidden; top: 10px; display: none" id="theDivDescription">
 		<div style="overflow: hidden;"></div><iframe id="theDescription" scrolling="yes" style="height: 300px; border: 1px; width: 165px; margin-top: 1px; margin-right: 1px; background-color : white;"></iframe>
 	</div>
-	
-<!-- add groups or subgroups as per this template (remove the backslash '\'):
+
+
+
+
+
+<!--
+*** HOW TO USE: 
+*** add groups or subgroups as per this template (remove the backslash '\'):
+*** add after the last subgroup to keep it more or less historically accurate
+***
 
 <div class="mermaid">
 graph TD
@@ -42,7 +47,6 @@ OG --> GT --> GT_subgroup
 PE --> Melmak
 PE --> TePe
 end
-
 </div>
 
 <div class="mermaid">
@@ -61,8 +65,8 @@ Mr_Krinkle --> CK_Brains
 Wombat_TAT --> Jack_Frost
 Leng --> Ground_Zero
 end
-
 </div>
+
 <div class="mermaid">
 graph TD
 subgraph OG-TAT-family
@@ -84,8 +88,8 @@ OG_TAT --> TAM
 *Melmak --> TAM
 TAM --> TAM_subgroup
 end	
-
 </div>
+
 <div class="mermaid">
 graph TD
 subgraph TAM-family
@@ -99,9 +103,13 @@ TAM --> End_Game
 TAM --> Blue_Moon
 TAM --> MVP --> AMVP
 end
-
 </div>   
 
+<!--
+*** HOW TO USE: 
+*** add above this comment
+*** 
+-->
 
 </body>
 </html>

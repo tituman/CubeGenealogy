@@ -37,3 +37,8 @@ to add information for a specific strain, file [strainDB.js](strainDB.js) can be
 ...
 };
 ```
+make sure "NewStrain" is written exactly the same in the HTML and in the strainDB.  
+that way, it will render a description as follows:
+
+![](./files/sample1.png)
+ 
