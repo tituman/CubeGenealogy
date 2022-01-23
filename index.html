@@ -21,9 +21,9 @@
 
 <!--
 *** HOW TO USE: 
-*** add groups or subgroups as per this template (remove the backslash '\'):
-*** add after the last subgroup to keep it more or less historically accurate
-***
+*** add groups or families as per this template (remove the backslash '\'):
+*** add after the last family to keep it more or less historically accurate
+*** if adding "_family" the "_family" will be ignored when showing description. 
 
 <div class="mermaid">
 graph TD
@@ -43,12 +43,26 @@ end
 <div class="mermaid">
 graph TD
 subgraph OG-Cube
-OG --> B+ --> TW
-OG --> PE --> TW --> TePe
+OG --> B+ 
+OG --> PE --> PE_family
 OG --> KSSS
-OG --> GT --> GT_subgroup
+OG --> GT --> GT_family
+end
+</div>
+
+<!--
+***  PE-family
+-->
+<div class="mermaid">
+graph TD
+subgraph PE-family
 PE --> Melmak
 PE --> TePe
+PE --> TW 
+*B+ --> TW
+TW --> TePe
+TW --> Enigma
+PE --> APE
 end
 </div>
 
@@ -60,15 +74,16 @@ graph TD
 subgraph GT-family
 *KSSS --> Albino_KSAT
 *GT --> Wombat_TAT
+Wombat_TAT --> Jack_Frost
+*APE --> Jack_Frost
 *GT --> Mr_Krinkle
 *GT --> Yimir
-*GT --> TAT_subgroup
+*GT --> TAT_family
 *GT --> Leng
 Wombat_TAT --> Albino_KSAT
 Albino_KSAT --> Golden_KSAT
 Mr_Krinkle --> Choco_Krinkle
 Mr_Krinkle --> CK_Brains
-Wombat_TAT --> Jack_Frost
 Leng --> Ground_Zero
 end
 </div>
@@ -95,7 +110,7 @@ TAT --> Toad
 Toad --> Toad_Black_Cap
 TAT --> TAM
 *Melmak --> TAM
-TAM --> TAM_subgroup
+TAM --> TAM_family
 end	
 </div>
 
@@ -103,7 +118,7 @@ end
 ***  TAM-family
 -->
 <div class="mermaid">
-graph TD
+graph LR
 subgraph TAM-family
 *TAT-->TAM
 *Melmak-->TAM
@@ -113,9 +128,13 @@ TAM --> Gandalf
 TAM --> Eye_Like
 TAM --> End_Game
 TAM --> Blue_Moon
+TAM --> Blue_J
 TAM --> MVP --> AMVP
+TAM --> Hydra
+TAM --> Omni
+TAM --> Shakti
 end
-</div>   
+</div>
 
 <!--
 *** HOW TO USE: 

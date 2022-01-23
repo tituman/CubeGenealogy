@@ -15,7 +15,9 @@
 	}
 	var descVisible = false;
 	//actual callback function, looks in the DB for the description
-	var remCallback = function (nodename) {
+	var remCallback = function (origNodename) {
+		//make the "..._family" part point to the <non>_family description
+		var nodename = origNodename.replace('_family','');
 		var clickableclasses = document.getElementsByClassName('clickable');
 		var iframe = document.getElementById("theDescription");
 		var html = "";
@@ -23,7 +25,10 @@
 		if (!descVisible){
 			for (let item of clickableclasses) {
 				strippedID = item.id.replace('flowchart-','');
-				if (strippedID.indexOf(nodename) == 0) { // nodename matches at the beginning of string. fixes problem of "TAT" being found in "Wombat_TAT"
+				strippedID = strippedID.substring(0, strippedID.lastIndexOf("-"));
+				if (strippedID === nodename) { // nodename matches at the beginning of string. fixes problem of "TAT" being found in "Wombat_TAT"
+				// needs to fix TAT being found it "TAT_subgroup"
+				//strippedID looks like: "TAT-109" or "TAT_subgroup-54" --> remove numbers from end until including hyphen -->"TAT" "TAT_subgroup"
 					console.log('nodename: ' + nodename + ', strippedID: ' + strippedID + ', title: ' + item.getAttribute('title'));
 					html = '<body>'+item.getAttribute('title')+'</body>';
 					iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
