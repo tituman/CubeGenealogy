@@ -36,10 +36,10 @@ const strainDB = {
 ,'Pearly_Gates' : '<p>An isolation of the t.a.m project Michael Montgomery has worked on...with full tubs first flush.. beautiful blue caps and a pearly shimmer to the lumpy stipes..</p>'
 ,'Gandalf' : "Gandalf: developed by MycoMama Angela and Bjorn <p>It is a 'gift only culture'. It is to NEVER be sold. Only gifted</p><p>Gandalf finds you</p><p>An isolation of the t.a.m project Angela N Bjorn Andersen have worked on...constantly producing monster fruits first flush with a few smaller weirdos...this variant has broken 300 grams wet first flush but over 100 is fairly normal</p><p> it tends to be a shapeshifter because it's intended to be grown out, swabbed and gifted, so its genetics are a little wild.</p><p></p>"
 ,'Eye_Like' : 'info?'
-,'MVP' : '<p>One of the first isolations from the t.a.m project...full tub first flush of long stipe fruits with a gumdrop brown cap with a bit of a black halo to them..</p><p></p>'
+,'MVP' : '<p>One of the first isolations from the TAM project...full tub first flush of long stipe fruits with a gumdrop brown cap with a bit of a black halo to them..</p><p></p>'
 ,'AMVP' : '<p>An abino mutation of the mvp dave isolated ..</p>'
 ,'End_Game' : 'info?'
-,'Blue_J' : '<p>An isolation of the t.a.m project...even pin set of tiny fruits that break veil vary early but continue to grow for 7 day...maxing out at 3 inches in height </p><p></p>'
+,'Blue_J' : '<p>An isolation of the TAM project...even pin set of tiny fruits that break veil vary early but continue to grow for 7 day...maxing out at 3 inches in height </p><p></p>'
 ,'Blue_Moon' : '<p>An isolation of the t.a.m project...growing in large clusters of ghost shaped fruits...dense fruits with heavy brusing"</p><p></p>'
 ,'Hydra' : 'Hydra: <p>made by Angela and Bjorn,</p><p></p>'
 ,'Omni' : 'Omni: <p>made by Angela and Bjorn,</p><p></p>'

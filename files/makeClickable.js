@@ -28,7 +28,7 @@
 				strippedID = strippedID.substring(0, strippedID.lastIndexOf("-"));
 				if (strippedID === nodename) { // nodename matches at the beginning of string. fixes problem of "TAT" being found in "Wombat_TAT"
 				// needs to fix TAT being found it "TAT_subgroup"
-				//strippedID looks like: "TAT-109" or "TAT_subgroup-54" --> remove numbers from end until including hyphen -->"TAT" "TAT_subgroup"
+				//strippedID looks like: "TAT-109" or "TAT_subgroup-54" --> remove numbers from end until including hyphen --> "TAT" "TAT_subgroup"
 					console.log('nodename: ' + nodename + ', strippedID: ' + strippedID + ', title: ' + item.getAttribute('title'));
 					html = '<body>'+item.getAttribute('title')+'</body>';
 					iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
