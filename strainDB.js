@@ -1,8 +1,8 @@
 const strainDB = {
  'OG' : 'OG Ps cubexsis'
 ,'B+' : '(original genetics)'
-,'PE' : '<p>(original genetics),</p><p>probably by Pollock + McKenna from amazonian/colombian stock</p>'
-,'Melmak' : 'iso of original homestead PE'
+,'PE' : '<p>(original genetics),</p><p>Developed by Rich G, from a blue abort targeting more blueing, from "Amazon" stock</p><p>OLD/wrong info ==> probably by Pollock + McKenna from amazonian/colombian stock</p>'
+,'Melmac' : 'iso of original homestead PE'
 ,'KSSS' : 'Koh Samui Super Strain, original genetics'
 ,'GT' : 'Golden Teacher, original genetics'
 ,'Yimir' : 'info?'
@@ -31,7 +31,7 @@ const strainDB = {
 ,'Toad_Black_Cap' : 'Toad Black Cap: Toad x TAT Black Cap'
 ,'Riptide' : 'Riptide: TAT x TW'
 ,'A_Riptide' : '? Albino Riptide'
-,'TAM' : 'TAM: <p>TAM project: TAT x Melmak</p>'
+,'TAM' : 'TAM: <p>TAM project: TAT x Melmac</p>'
 ,'XXX' : 'info?'
 ,'Pearly_Gates' : '<p>An isolation of the t.a.m project Michael Montgomery has worked on...with full tubs first flush.. beautiful blue caps and a pearly shimmer to the lumpy stipes..</p>'
 ,'Gandalf' : "Gandalf: developed by MycoMama Angela and Bjorn <p>It is a 'gift only culture'. It is to NEVER be sold. Only gifted</p><p>Gandalf finds you</p><p>An isolation of the t.a.m project Angela N Bjorn Andersen have worked on...constantly producing monster fruits first flush with a few smaller weirdos...this variant has broken 300 grams wet first flush but over 100 is fairly normal</p><p> it tends to be a shapeshifter because it's intended to be grown out, swabbed and gifted, so its genetics are a little wild.</p><p></p>"
