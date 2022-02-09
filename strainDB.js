@@ -65,7 +65,7 @@ const strainDB = {
 
 ,'NST' : 'info?'
 
-,'Ghost' : '<p>Ghost: <p>\
+,'Ghost' : '<p>Ghost: </p>\
 <p>A slow growing mutation of tat...small fruits with a spoty pin set...first flush and second flush can over lap...with lots of aborts ...definitely not grown for its yeilds...but the potancy is far above average</p>\
 <p>a smaller fat bottom stipe with a wide wavy cap</p>\
 <p>By Jik Fibs</p>\
@@ -77,7 +77,9 @@ const strainDB = {
 
 ,'Toad_Black_Cap' : 'Toad Black Cap: Toad x TAT Black Cap'
 
-,'Riptide' : 'Riptide: TAT x TW'
+,'Riptide' : '<p>Riptide: TAT x TW</p>\
+<p> by Doma and MMF<p>\
+<p></p>'
 
 ,'A_Riptide' : '? Albino Riptide'
 
@@ -98,11 +100,12 @@ const strainDB = {
 
 ,'Eye_Like' : 'info?'
 
-,'MVP' : '<p>MVP: (meaning?)<p>\
+,'MVP' : '<p>MVP: Most Valued Producer<p>\
 <p>One of the first isolations from the TAM project...full tub first flush of long stipe fruits with a gumdrop brown cap with a bit of a black halo to them..</p>\
 <p></p>'
 
-,'AMVP' : '<p>An abino mutation of the mvp dave isolated ..</p>\
+,'AMVP' : '<p>AMVP: Albino Most Valued Producer<p>\
+<p>An abino mutation of the mvp dave isolated ..</p>\
 <p></p>'
 
 ,'End_Game' : 'info?'
