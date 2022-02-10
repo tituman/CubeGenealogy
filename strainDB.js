@@ -122,9 +122,6 @@ const strainDB = {
 ,'Omni' : 'Omni: <p>made by Angela and Bjorn,</p>\
 <p></p>'
 
-,'Shakti' : 'Shakti: <p>made by Angela and Bjorn,</p>\
-<p></p>'
-
 ,'TW' : '<p>Tidal Wave: B+ x PE</p>\
 <p>Original cross by Doma(?)</p>\
 <p></p>'
@@ -136,6 +133,13 @@ const strainDB = {
 <p>Gifting strain, propagation only by clone because it does not sporulate</p>'
 
 ,'APE' : '<p>APE: Albino PE </p>\
+<p></p>'
+
+,'Shakti' : '<p>Shakti: Albino isolation of Malabar Coast </p>\
+<p>by Angela and Bjorn, <a target="_blank" href="https://www.instagram.com/p/CQZuI8PhBDV/?utm_source=ig_web_copy_link">source</a></p>\
+<p></p>'
+
+,'Malabar' : '<p>info?</p>\
 <p></p>'
 
 //template:
